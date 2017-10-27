@@ -1,0 +1,17 @@
+{
+  "name": "sessiontests",
+  "version": "1.0.0",
+  "description": "Test Session MicroService",
+  "scripts": {
+    "test": "newman run tests/AmazonJWT.postman_collection.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pallavi-pillarisetty/postmantests.git"
+  },
+  "author": "Pallavi Pillarisetty",
+  "homepage": "https://github.com/pallavi-pillarisetty/postmantests#readme",
+  "devDependencies": {
+    "newman": "^3.8.3"
+  }
+}

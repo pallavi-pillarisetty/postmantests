@@ -1,0 +1,40 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AmazonJWT",
+		"_postman_id": "9c674a4f-1914-b280-0cc4-f7a2b4916a56",
+		"description": "Testing JWT on Amazon API gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sessions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"JWT token is created\"] = jsonData.value === 100;",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"jwt\");",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://wa9hcrw5be.execute-api.us-east-1.amazonaws.com/dev/session",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\"email\": \"pallavi.pillarisetty@sabre.com\", \"password\": \"password1\"}"
+				},
+				"description": "Sessions on AWS"
+			},
+			"response": []
+		}
+	]
+}
